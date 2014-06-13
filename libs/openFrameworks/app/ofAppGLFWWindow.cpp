@@ -1063,11 +1063,21 @@ void ofAppGLFWWindow::resize_cb(GLFWwindow* windowP_,int w, int h) {
 
 //------------------------------------------------------------
 void ofAppGLFWWindow::setVerticalSync(bool bVerticalSync){
-	if(bVerticalSync){
-		glfwSwapInterval( 1);
-	}else{
-		glfwSwapInterval(0);
+	bVerticalSync ? setSwapInterval(1) : setSwapInterval(0);
+}
+
+//------------------------------------------------------------
+bool ofAppGLFWWindow::setSwapInterval(int interval){
+	if(interval < 0){
+		if(glfwExtensionSupported("WGL_EXT_swap_control_tear") == GL_TRUE ||
+		   glfwExtensionSupported("GLX_EXT_swap_control_tear") == GL_TRUE)){
+			glfwSwapInterval(interval);
+			return true;
+		}
+		return false;
 	}
+	glfwSwapInterval(interval);
+	return true;
 }
 
 //------------------------------------------------------------

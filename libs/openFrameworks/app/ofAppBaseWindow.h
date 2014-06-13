@@ -51,6 +51,8 @@ public:
 	
 	virtual void	setVerticalSync(bool enabled){};
 
+	virtual bool	setSwapInterval(int interval){};
+
 #if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI)
 	virtual Display* getX11Display(){return NULL;}
 	virtual Window  getX11Window() {return 0;}

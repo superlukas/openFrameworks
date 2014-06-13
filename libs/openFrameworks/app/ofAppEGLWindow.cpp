@@ -1284,6 +1284,12 @@ void ofAppEGLWindow::setVerticalSync(bool enabled){
 }
 
 //------------------------------------------------------------
+void ofAppEGLWindow::setSwapInterval(int interval){
+  // TODO: eglSwapInterval doesn't support negative values.
+  //       Check for late swap tearing extensions manually.
+}
+
+//------------------------------------------------------------
 void ofAppEGLWindow::threadedFunction(){
     // set the thread to low priority
     getPocoThread().setOSPriority(Poco::Thread::getMinOSPriority());

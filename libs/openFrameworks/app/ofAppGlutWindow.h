@@ -56,6 +56,8 @@ public:
 
 	void		setVerticalSync(bool enabled);
 
+	bool		setSwapInterval(int interval);
+
 private:
 	static void display(void);
 	static void mouse_cb(int button, int state, int x, int y);

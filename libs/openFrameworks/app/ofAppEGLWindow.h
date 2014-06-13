@@ -112,7 +112,11 @@ public:
 	virtual void	disableSetupScreen();
 
 	virtual void	setVerticalSync(bool enabled);
-	
+
+	virtual bool	setSwapInterval(int interval);
+
+	virtual bool	setSwapInterval(int interval);
+
 	struct Settings {
 		ofAppEGLWindowType eglWindowPreference;  // what window type is preferred?
 		EGLint eglWindowOpacity; // 0-255 window alpha value

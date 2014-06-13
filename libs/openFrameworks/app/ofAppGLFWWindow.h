@@ -79,6 +79,8 @@ public:
 
 	void		setVerticalSync(bool bSync);
 
+	bool		setSwapInterval(int interval);
+
     int         getPixelScreenCoordScale();
 
 #if defined(TARGET_LINUX) && !defined(TARGET_RASPBERRY_PI)
