@@ -1070,7 +1070,7 @@ void ofAppGLFWWindow::setVerticalSync(bool bVerticalSync){
 bool ofAppGLFWWindow::setSwapInterval(int interval){
 	if(interval < 0){
 		if(glfwExtensionSupported("WGL_EXT_swap_control_tear") == GL_TRUE ||
-		   glfwExtensionSupported("GLX_EXT_swap_control_tear") == GL_TRUE)){
+		   glfwExtensionSupported("GLX_EXT_swap_control_tear") == GL_TRUE){
 			glfwSwapInterval(interval);
 			return true;
 		}
